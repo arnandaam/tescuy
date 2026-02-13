@@ -75,6 +75,14 @@
             cursor: pointer;
         }
 
+        @media (max-width: 768px) {
+            .card {
+                width: 95%;
+                height: 85vh;
+                max-height: none;
+            }
+        }
+
         .card.opened {
             transform: rotateY(180deg);
         }
@@ -96,7 +104,7 @@
             justify-content: center;
             align-items: center;
             color: white;
-            padding: 40px;
+            padding: 40px 20px;
             border: 3px solid #ff1493;
         }
 
@@ -105,6 +113,22 @@
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
             animation: pulse 2s infinite;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .card-front {
+                padding: 20px 15px;
+            }
+            
+            .card-front h1 {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+            }
+
+            .card-front p {
+                font-size: 1em;
+            }
         }
 
         @keyframes pulse {
@@ -152,6 +176,24 @@
             transform: translateY(-50%);
         }
 
+        @media (max-width: 768px) {
+            .tap-hint {
+                font-size: 1.1em;
+                padding: 12px 25px;
+                margin-top: 20px;
+            }
+
+            .tap-hint::before {
+                left: -30px;
+                font-size: 1.2em;
+            }
+
+            .tap-hint::after {
+                right: -30px;
+                font-size: 1.2em;
+            }
+        }
+
         @keyframes bounce {
             0%, 100% { 
                 transform: translateY(0px);
@@ -177,12 +219,18 @@
         .card-back {
             background: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 100%);
             transform: rotateY(180deg);
-            padding: 20px;
+            padding: 20px 15px;
             overflow: hidden;
             border: 3px solid #ff69b4;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .card-back {
+                padding: 15px 10px;
+            }
         }
 
         .card-content {
@@ -207,6 +255,14 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
             margin: 15px 0;
+        }
+
+        @media (max-width: 768px) {
+            .photo-gallery {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                margin: 10px 0;
+            }
         }
 
         .photo-frame {
@@ -234,6 +290,17 @@
             background: #f9f9f9;
         }
 
+        @media (max-width: 768px) {
+            .photo-frame {
+                padding: 6px;
+                transform: rotate(0deg) !important;
+            }
+
+            .photo-frame img {
+                height: 200px;
+            }
+        }
+
         /* Message section */
         .message {
             background: white;
@@ -251,6 +318,18 @@
             font-style: italic;
         }
 
+        @media (max-width: 768px) {
+            .message {
+                padding: 15px;
+                margin: 10px 0 5px 0;
+            }
+
+            .message p {
+                font-size: 1em;
+                line-height: 1.5;
+            }
+        }
+
         /* Decorative elements */
         .decoration {
             position: absolute;
@@ -266,32 +345,13 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .card {
-                height: 85vh;
-                max-height: 550px;
-            }
-            
-            .card-front h1 {
-                font-size: 2em;
-            }
-            
             .card-content h2 {
-                font-size: 1.5em;
-                margin-bottom: 10px;
-            }
-            
-            .message p {
-                font-size: 1.1em;
-            }
-            
-            .photo-gallery {
-                grid-template-columns: 1fr;
-                gap: 8px;
+                font-size: 1.3em;
+                margin-bottom: 8px;
             }
 
-            .photo-frame img {
-                height: 180px;
-                object-fit: contain;
+            .decoration {
+                font-size: 20px;
             }
         }
     </style>
